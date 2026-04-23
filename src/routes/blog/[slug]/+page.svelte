@@ -21,7 +21,7 @@
 
 <style>
 	.post-page {
-		max-width: 700px;
+		max-width: 760px;
 		margin: 0 auto;
 		padding: 7rem 0 0;
 		display: grid;

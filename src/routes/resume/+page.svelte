@@ -206,7 +206,7 @@
 
 <style>
 	.page {
-		max-width: 700px;
+		max-width: 760px;
 		margin: 0 auto;
 		padding: 2.4rem 0 3.4rem;
 		display: grid;

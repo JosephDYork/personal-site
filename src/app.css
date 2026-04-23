@@ -1,6 +1,6 @@
 :root {
 	--base: lab(8.11897% .811279 -12.254);
-	--bg: rgb(255, 255, 255);
+	--bg: #F6EEE3;
 	--paper: color-mix(in lab, #fffdf7 96%, var(--base));
 	--ink: color-mix(in lab, black 86%, var(--base));
 	--muted: color-mix(in lab, black 58%, var(--base));
@@ -30,6 +30,17 @@
 	box-sizing: border-box;
 }
 
+
+*::selection {
+  background: #AEC6CF;
+  color: #000000;
+}
+
+*::-moz-selection {
+  background: #AEC6CF;
+  color: #000000;
+}
+
 body {
 	margin: 0;
 	font-family: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
@@ -41,6 +52,22 @@ body {
 
 a {
 	color: inherit;
+}
+
+code {
+	font-size: 0.9rem
+}
+
+blockquote {
+	border-left: 3px solid;
+	background: var(--accent-soft);
+	margin: 5px 0 5px 0;
+	padding: 5px 0 5px 10px;
+	height: fit-content;
+}
+
+blockquote p {
+	margin-bottom: 0;
 }
 
 .theme-toggle {

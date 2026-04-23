@@ -45,7 +45,7 @@
 
 <style>
 	.page {
-		max-width: 700px;
+		max-width: 760px;
 		margin: 0 auto;
 		padding: 3.2rem 0 4rem;
 		display: grid;
