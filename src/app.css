@@ -1,0 +1,79 @@
+:root {
+	--base: lab(8.11897% .811279 -12.254);
+	--bg: rgb(255, 255, 255);
+	--paper: color-mix(in lab, #fffdf7 96%, var(--base));
+	--ink: color-mix(in lab, black 86%, var(--base));
+	--muted: color-mix(in lab, black 58%, var(--base));
+	--line: color-mix(in lab, #f8f1e5 88%, var(--base));
+	--accent: color-mix(in lab, white 36%, var(--base));
+	--accent-soft: color-mix(in lab, #f9efde 88%, var(--base));
+	--link-idle: color-mix(in lab, var(--muted) 82%, white 18%);
+	--hover-highlight: #000000;
+	--radius: 14px;
+	--shadow: 0 18px 44px -34px rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme='dark'] {
+	--bg: color-mix(in lab, white 5%, var(--base));
+	--paper: color-mix(in lab, white 10%, var(--base));
+	--ink: color-mix(in lab, white 86%, var(--base));
+	--muted: color-mix(in lab, white 62%, var(--base));
+	--line: color-mix(in lab, white 28%, var(--base));
+	--accent: color-mix(in lab, white 44%, var(--base));
+	--accent-soft: color-mix(in lab, white 18%, var(--base));
+	--link-idle: var(--muted);
+	--hover-highlight: #ffffff;
+	--shadow: 0 18px 44px -34px rgba(0, 0, 0, 0.85);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+	color: var(--ink);
+	background: var(--bg);
+	line-height: 1.6;
+	transition: background-color 0.2s ease;
+}
+
+a {
+	color: inherit;
+}
+
+.theme-toggle {
+	position: relative;
+	border: 0;
+	border-radius: 999px;
+	width: 2.15rem;
+	height: 2.15rem;
+	padding: 0;
+	background: transparent;
+	color: var(--ink);
+	font: inherit;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+.theme-toggle:hover {
+	background: transparent;
+	color: var(--hover-highlight);
+}
+
+
+.mode-sunny {
+	width: 1.25rem;
+	height: 1.25rem;
+	stroke: currentColor;
+	fill: none;
+	stroke-width: 1.1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.mode-sunny line {
+	stroke-width: 0.8;
+}
