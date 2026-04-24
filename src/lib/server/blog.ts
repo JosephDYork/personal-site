@@ -3,8 +3,11 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { marked } from 'marked';
+import { bundledLanguages, bundledThemes, createHighlighter } from 'shiki';
 
 const BLOG_DIR = path.join(process.cwd(), 'src', 'content', 'blog');
+const SHIKI_THEME = 'vitesse-dark';
+let highlighterPromise: ReturnType<typeof createHighlighter> | null = null;
 
 export type BlogPostSummary = {
 	slug: string;
@@ -48,7 +51,47 @@ function parseFrontmatter(raw: string): { meta: Record<string, string>; body: st
 	return { meta, body };
 }
 
-function fromMarkdown(slug: string, raw: string): BlogPost {
+function getHighlighter() {
+	if (!highlighterPromise) {
+		highlighterPromise = createHighlighter({
+			themes: [SHIKI_THEME],
+			langs: ['plaintext', 'text', 'bash', 'js', 'ts', 'tsx', 'jsx', 'json', 'python', 'sql', 'yaml', 'md']
+		});
+	}
+
+	return highlighterPromise;
+}
+
+function resolveShikiLang(rawLang: string | undefined): string {
+	if (!rawLang) return 'plaintext';
+
+	const lang = rawLang.split(/\s+/)[0].toLowerCase();
+
+	if (lang in bundledLanguages) {
+		return lang;
+	}
+
+	return 'plaintext';
+}
+
+async function renderMarkdown(body: string): Promise<string> {
+	const highlighter = await getHighlighter();
+	const renderer = new marked.Renderer();
+
+	renderer.code = ({ text, lang }) => {
+		const shikiLang = resolveShikiLang(lang);
+		const html = highlighter.codeToHtml(text, {
+			lang: shikiLang,
+			theme: SHIKI_THEME,
+		});
+
+		return html.replace('<pre class="shiki', '<pre tabindex="0" class="shiki');
+	};
+
+	return (await marked.parse(body, { async: true, renderer })) as string;
+}
+
+async function fromMarkdown(slug: string, raw: string): Promise<BlogPost> {
 	const { meta, body } = parseFrontmatter(raw);
 	const datetime = meta.date;
 
@@ -62,7 +105,7 @@ function fromMarkdown(slug: string, raw: string): BlogPost {
 		summary: meta.summary,
 		datetime,
 		label: formatDate(datetime),
-		html: marked.parse(body) as string
+		html: await renderMarkdown(body)
 	};
 }
 
@@ -74,7 +117,7 @@ export async function getAllPosts(): Promise<BlogPostSummary[]> {
 		if (!file.endsWith('.md')) continue;
 		const slug = file.replace(/\.md$/, '');
 		const raw = await readFile(path.join(BLOG_DIR, file), 'utf8');
-		const post = fromMarkdown(slug, raw);
+		const post = await fromMarkdown(slug, raw);
 		posts.push({
 			slug: post.slug,
 			title: post.title,
@@ -92,7 +135,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
 	try {
 		const raw = await readFile(file, 'utf8');
-		return fromMarkdown(slug, raw);
+		return await fromMarkdown(slug, raw);
 	} catch {
 		return null;
 	}

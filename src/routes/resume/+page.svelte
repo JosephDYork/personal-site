@@ -80,8 +80,8 @@
 
 	const education = [
 		{
-			school: 'University of Cincinnati - College of Engineering and Applied Science',
-			degree: 'Master of Engineering (MEng), Computer Science',
+			school: 'University of Cincinnati',
+			degree: 'Master of Engineering, Computer Science',
 			timeline: '2025 - 2027',
 			details: [
 				'Grade: 4.0/4.0',
@@ -90,7 +90,7 @@
 		},
 		{
 			school: 'Wright State University',
-			degree: "Bachelor's Degree, Quantitative Economics",
+			degree: "Bachelor's Degree, Economics",
 			timeline: '2017 - 2021',
 			details: [
 				'Graduated Summa Cum Laude (3.95/4.00), Full Academic Scholarship',
@@ -206,24 +206,22 @@
 
 <style>
 	.page {
-		max-width: 760px;
-		margin: 0 auto;
-		padding: 2.4rem 0 3.4rem;
+		max-width: 680px;
+		margin: 125px auto 0 auto;
 		display: grid;
 		gap: 2rem;
 	}
 
 	.section {
 		padding-bottom: 1.25rem;
-		border-bottom: 1px solid var(--line);
+		border-bottom: 1px solid
 	}
 
 	.section-title {
-		font-size: 1.2rem;
+		margin: 0 0 1rem;
+		font-size: 19px;
 		font-weight: 500;
 		letter-spacing: 0;
-		color: var(--muted);
-		margin-bottom: 1rem;
 	}
 
 	h2,
@@ -250,7 +248,6 @@
 
 	p {
 		margin: 0;
-		color: var(--muted);
 	}
 
 	.stack {
@@ -303,10 +300,6 @@
 		padding-left: 1.1rem;
 		display: grid;
 		gap: 0.35rem;
-	}
-
-	.bullets li {
-		color: var(--muted);
 	}
 
 	.detail-grid {

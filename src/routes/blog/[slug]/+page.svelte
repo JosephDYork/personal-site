@@ -21,18 +21,19 @@
 
 <style>
 	.post-page {
-		max-width: 760px;
-		margin: 0 auto;
-		padding: 7rem 0 0;
-		display: grid;
-		gap: 0.8rem;
+		max-width: 680px;
+		margin: 125px auto 0;
+		padding-top: 0;
+		display: flex;
+		flex-direction: column;
 	}
 
 	h1 {
 		margin: 0;
-		font-size: clamp(1.7rem, 4vw, 2.2rem);
+		font-size: 2rem;
 		line-height: 1.25;
-		font-weight: 500
+		font-weight: 500;
+		margin-bottom: 1rem;
 	}
 
 	.post-date {
@@ -42,6 +43,58 @@
 	.post-body {
 		line-height: 1.7;
 		font-weight: 400
+	}
+
+	.post-body :global(pre.shiki) {
+		margin: 1rem 0;
+		padding: 0.95rem 1rem;
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		overflow-x: auto;
+	}
+
+	.post-body :global(pre.shiki),
+	.post-body :global(pre.shiki span) {
+		color: var(--shiki-light);
+		background-color: var(--shiki-light-bg);
+	}
+
+	:global(:root[data-theme='dark'] .post-body pre.shiki),
+	:global(:root[data-theme='dark'] .post-body pre.shiki span) {
+		color: var(--shiki-dark);
+		background-color: var(--shiki-dark-bg);
+	}
+
+	.post-body :global(pre.shiki code) {
+		display: block;
+		line-height: 0;
+		font-size: 0.8rem;
+		font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+	}
+
+	.post-body :global(pre.shiki .line) {
+		display: block;
+		min-height: 1.45em;
+	}
+
+	.post-body :global(:not(pre) > code) {
+		background: none;
+		color: var(--post-code);
+		font-size: 0.9rem;
+		font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+	}
+
+	.post-body :global(:not(pre) > code)::before,
+	.post-body :global(:not(pre) > code)::after {
+		content: '`';
+	}
+
+	.post-body :global(blockquote) {
+		border-left: 3px solid var(--muted);
+		color: var(--muted);
+		margin: 0;
+		padding: 3px 0 3px 15px;
+		height: fit-content;
 	}
 
 	.post-body :global(p) {

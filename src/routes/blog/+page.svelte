@@ -14,7 +14,7 @@
 </svelte:head>
 
 <main class="posts" aria-label="Content">
-	<h3 class="posts-item-note" aria-label="Posts">Posts</h3>
+	<h3 class="section-title" aria-label="Posts">Posts</h3>
 
 	{#each data.posts as post}
 		<article class="post-item">
@@ -31,19 +31,17 @@
 
 <style>
 	.posts {
-		max-width: 700px;
-		margin: 0 auto;
-		padding: 6.5rem 0 0;
-		padding-left: 10px;
-		padding-right: 10px;
+		max-width: 680px;
+		margin: 125px auto 0 auto;
 		font-size: 16px;
 	}
 
-	.posts-item-note {
+	.section-title {
 		margin: 0 0 1rem;
-		font-size: 1.24rem;
+		font-size: 19px;
 		font-weight: 500;
 		letter-spacing: 0;
+		line-height: 1.2;
 	}
 
 	.post-item {
