@@ -66,12 +66,9 @@
 		border: 1px solid var(--line);
 	}
 
-	h1, h2 {
+	h1 {
 		margin: 0;
 		line-height: 1.1;
-	}
-
-	h1 {
 		font-size: 32px;
 	}
 
@@ -116,15 +113,5 @@
 	.about p {
 		margin: 0;
 		padding: 0;
-	}
-
-	@media (max-width: 760px) {
-		.page {
-			padding: 2rem 0 2.5rem;
-		}
-
-		.subtitle {
-			max-width: 32ch;
-		}
 	}
 </style>

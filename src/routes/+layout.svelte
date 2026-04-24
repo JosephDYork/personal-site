@@ -82,7 +82,6 @@
 					stroke-width="1"
 					aria-hidden="true"
 				>
-					<title>LIGHT</title>
 					<g>
 						<circle
 							cx="7"
