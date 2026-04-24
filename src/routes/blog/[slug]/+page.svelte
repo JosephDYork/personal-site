@@ -45,7 +45,11 @@
 	}
 
 	.post-body :global(p) {
-		margin: 0 0 1rem;
+		margin: 1rem 0;
+	}
+
+	.post-body :global(blockquote p) {
+		margin: 0;
 	}
 
 	@media (max-width: 760px) {

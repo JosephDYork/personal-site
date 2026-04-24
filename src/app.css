@@ -54,6 +54,24 @@ a {
 	color: inherit;
 }
 
+.post-body a {
+	color: rgb(74, 222, 128);
+	text-decoration: underline;
+	text-underline-offset: 0.12em;
+}
+
+.post-body pre,
+.post-body code {
+	background: none;
+	color: lab(56.9303 76.8162 -8.07021);
+	font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+}
+
+.post-body :not(pre) > code::before,
+.post-body :not(pre) > code::after {
+	content: '`';
+}
+
 code {
 	font-size: 0.9rem
 }
@@ -61,13 +79,13 @@ code {
 blockquote {
 	border-left: 3px solid;
 	background: var(--accent-soft);
-	margin: 5px 0 5px 0;
+	margin: 5px 0;
 	padding: 5px 0 5px 10px;
 	height: fit-content;
 }
 
 blockquote p {
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .theme-toggle {
