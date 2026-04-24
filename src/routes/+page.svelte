@@ -20,25 +20,22 @@
 	</section>
 
 	<section class="about">
-		<h2>About</h2>
-		<ul>
-			<li>Building machine translation and classification systems at Chmura Economics.</li>
-			<li>Graduate student researcher at the University of Cincinnati.</li>
-			<li>Helping governments and corporations with cost-effective market intelligence.</li>
-			<li>Writing about formal language theory, operating systems, and machine learning.</li>
-		</ul>
-
 		<p>
-			I'm a software engineer based in Cincinnati, Ohio, building production software and machine
+			I'm a software engineer based in Cincinnati, Ohio, building software and machine
 			learning systems at Chmura Economics. I currently work on our Data and Machine Learning team,
 			where we build translation and classification systems that process billions of lines of text.
 		</p>
 
 		<p>
 			In the evenings, I collaborate with my research group at the University of Cincinnati,
-			exploring software architecture and machine learning. Outside of work, I enjoy
+			exploring software architecture and machine learning.
+		</p>
+
+		<p>
+			Outside of work, I enjoy
 			fencing, running, and traveling with friends.
 		</p>
+
 
 	</section>
 </main>
@@ -47,7 +44,7 @@
 	.page {
 		max-width: 680px;
 		margin: 0 auto;
-		padding: 3.2rem 0 4rem;
+		padding: 6rem 0 4rem;
 		display: grid;
 		gap: 1.35rem;
 	}
@@ -113,27 +110,12 @@
 
 	.about {
 		display: grid;
-		gap: 0.85rem;
-	}
-
-	.about h2 {
-		font-size: 2rem;
-		letter-spacing: 0;
-	}
-
-	.about ul {
-		margin: 0;
-		padding-left: 1.2rem;
-		display: grid;
-		gap: 0.35rem;
-	}
-
-	.about li, .about p {
-		margin: 0;
+		gap: 0.7rem;
 	}
 
 	.about p {
-		margin-top: 0.55rem;
+		margin: 0;
+		padding: 0;
 	}
 
 	@media (max-width: 760px) {
