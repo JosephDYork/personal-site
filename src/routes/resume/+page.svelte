@@ -206,20 +206,21 @@
 
 <style>
 	.page {
-		max-width: 680px;
-		margin: 125px auto 0 auto;
+		max-width: var(--content-max);
+		margin: 0 auto;
+		padding: var(--page-top) 0 var(--page-bottom);
 		display: grid;
 		gap: 2rem;
 	}
 
 	.section {
 		padding-bottom: 1.25rem;
-		border-bottom: 1px solid
+		border-bottom: 1px solid var(--line);
 	}
 
 	.section-title {
 		margin: 0 0 1rem;
-		font-size: 19px;
+		font-size: var(--section-title-size);
 		font-weight: 500;
 		letter-spacing: 0;
 	}
@@ -324,7 +325,7 @@
 
 	@media (max-width: 760px) {
 		.page {
-			padding: 1.8rem 0 2.4rem;
+			padding: var(--page-top-mobile) 0 var(--page-bottom-mobile);
 		}
 
 		.detail-grid {

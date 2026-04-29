@@ -21,9 +21,9 @@
 
 <style>
 	.post-page {
-		max-width: 680px;
-		margin: 125px auto 0;
-		padding-top: 0;
+		max-width: var(--content-max);
+		margin: 0 auto;
+		padding: var(--page-top) 0 var(--page-bottom);
 		display: flex;
 		flex-direction: column;
 	}
@@ -107,7 +107,7 @@
 
 	@media (max-width: 760px) {
 		.post-page {
-			padding: 1.8rem 0 2.4rem;
+			padding: var(--page-top-mobile) 0 var(--page-bottom-mobile);
 		}
 	}
 </style>

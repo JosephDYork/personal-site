@@ -223,7 +223,7 @@
 		text-decoration: underline;
 	}
 
-	@media (max-width: 980) {
+	@media (max-width: 980px) {
 		.site-header {
 			padding: 0.85rem 0 0.65rem;
 			flex-direction: row;

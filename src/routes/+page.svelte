@@ -42,9 +42,9 @@
 
 <style>
 	.page {
-		max-width: 680px;
+		max-width: var(--content-max);
 		margin: 0 auto;
-		padding: 6rem 0 4rem;
+		padding: var(--page-top) 0 var(--page-bottom);
 		display: grid;
 		gap: 1.35rem;
 	}
@@ -105,6 +105,10 @@
 		color: var(--hover-highlight);
 	}
 
+	.social-icons a:focus-visible {
+		color: var(--hover-highlight);
+	}
+
 	.about {
 		display: grid;
 		gap: 0.7rem;
@@ -113,5 +117,11 @@
 	.about p {
 		margin: 0;
 		padding: 0;
+	}
+
+	@media (max-width: 760px) {
+		.page {
+			padding: var(--page-top-mobile) 0 var(--page-bottom-mobile);
+		}
 	}
 </style>

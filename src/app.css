@@ -1,6 +1,12 @@
 :root {
 	--base: lab(8.11897% .811279 -12.254);
 	--bg: #F6EEE3;
+	--content-max: 680px;
+	--page-top: 6rem;
+	--page-bottom: 4rem;
+	--page-top-mobile: 1.8rem;
+	--page-bottom-mobile: 2.4rem;
+	--section-title-size: 19px;
 	--paper: color-mix(in lab, #fffdf7 96%, var(--base));
 	--ink: color-mix(in lab, black 86%, var(--base));
 	--muted: color-mix(in lab, #F6EEE3 30%, var(--base));
@@ -36,13 +42,13 @@
 
 
 *::selection {
-  background: #AEC6CF;
-  color: #000000;
+	background: #AEC6CF;
+	color: #000000;
 }
 
 *::-moz-selection {
-  background: #AEC6CF;
-  color: #000000;
+	background: #AEC6CF;
+	color: #000000;
 }
 
 body {
