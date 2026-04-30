@@ -7,6 +7,12 @@
 	--page-top-mobile: 1.8rem;
 	--page-bottom-mobile: 2.4rem;
 	--section-title-size: 19px;
+	--title-1-size: 2rem;
+	--title-1-line: 1.2;
+	--title-1-weight: 500;
+	--title-2-line: 1.2;
+	--body-size: 1rem;
+	--meta-size: 0.85rem;
 	--paper: color-mix(in lab, #fffdf7 96%, var(--base));
 	--ink: color-mix(in lab, black 86%, var(--base));
 	--muted: color-mix(in lab, #F6EEE3 30%, var(--base));

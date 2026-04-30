@@ -223,6 +223,7 @@
 		font-size: var(--section-title-size);
 		font-weight: 500;
 		letter-spacing: 0;
+		line-height: var(--title-2-line);
 	}
 
 	h2,
@@ -230,11 +231,6 @@
 	h4 {
 		margin: 0;
 		line-height: 1.2;
-	}
-
-	h2 {
-		font-size: 1.25rem;
-		margin-bottom: 0.5rem;
 	}
 
 	h3 {
@@ -249,6 +245,7 @@
 
 	p {
 		margin: 0;
+		font-size: var(--body-size);
 	}
 
 	.stack {
@@ -270,7 +267,7 @@
 	}
 
 	.company-head p {
-		font-size: 0.92rem;
+		font-size: var(--meta-size);
 	}
 
 	.roles {

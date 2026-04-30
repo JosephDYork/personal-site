@@ -30,19 +30,21 @@
 
 	h1 {
 		margin: 0;
-		font-size: 2rem;
-		line-height: 1.25;
-		font-weight: 500;
+		font-size: var(--title-1-size);
+		line-height: var(--title-1-line);
+		font-weight: var(--title-1-weight);
 		margin-bottom: 1rem;
 	}
 
 	.post-date {
-		color: var(--muted)
+		font-size: var(--meta-size);
+		color: var(--muted);
 	}
 
 	.post-body {
 		line-height: 1.7;
-		font-weight: 400
+		font-size: var(--body-size);
+		font-weight: 400;
 	}
 
 	.post-body :global(pre.shiki) {

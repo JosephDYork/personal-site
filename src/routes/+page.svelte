@@ -68,13 +68,14 @@
 
 	h1 {
 		margin: 0;
-		line-height: 1.1;
-		font-size: 32px;
+		font-size: var(--title-1-size);
+		line-height: var(--title-1-line);
+		font-weight: var(--title-1-weight);
 	}
 
 	.subtitle {
 		margin: 0;
-		font-size: 16px;
+		font-size: var(--body-size);
 		color: var(--muted);
 	}
 
@@ -117,6 +118,7 @@
 	.about p {
 		margin: 0;
 		padding: 0;
+		font-size: var(--body-size);
 	}
 
 	@media (max-width: 760px) {

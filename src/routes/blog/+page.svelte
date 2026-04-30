@@ -34,7 +34,7 @@
 		max-width: var(--content-max);
 		margin: 0 auto;
 		padding: var(--page-top) 0 var(--page-bottom);
-		font-size: 16px;
+		font-size: var(--body-size);
 	}
 
 	.section-title {
@@ -42,15 +42,15 @@
 		font-size: var(--section-title-size);
 		font-weight: 500;
 		letter-spacing: 0;
-		line-height: 1.2;
+		line-height: var(--title-2-line);
 	}
 
 	.post-item {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		line-height: 30px;
-		padding: 5px 0 5px 0;
+		line-height: 1.4;
+		padding: 0.45rem 0;
 		border-top: 0.8px solid var(--line);
 	}
 
@@ -76,7 +76,7 @@
 
 	.post-item-meta {
 		display: block;
-		font-size: 0.85rem;
+		font-size: var(--meta-size);
 		color: var(--muted);
 		white-space: nowrap;
 	}
